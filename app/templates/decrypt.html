@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decrypt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+        <header>
+        <h1>My Encryption App</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('encryption.home') }}">Home</a></li>
+                <li><a href="{{ url_for('encryption.show_encrypt_form') }}">Chiffrer des données</a></li>
+                <li><a href="{{ url_for('encryption.show_generate_keys_form') }}">Générer des clés</a></li>
+                <li><a href="{{ url_for('encryption.show_encrypt_image_form') }}">Chiffrer des images</a></li>
+                <li><a href="{{ url_for('encryption.show_decrypt_image_form') }}">Déchiffrer des images</a></li>
+            </ul>
+        </nav>
+                <h1>Dechiffrement</h1>
+
+    </header>
+    <div class="container" id="decrypt">
+        <h2>Formulaire de déchiffrement</h2>
+        <form action="{{ url_for('encryption.decrypt') }}" method="post" enctype="multipart/form-data">
+            <label for="encrypted_file">Fichier chiffré:</label>
+            <input type="file" id="encrypted_file" name="encrypted_file" accept=".txt" required>
+            <label for="private_key_file">Fichier de clé privée:</label>
+            <input type="file" id="private_key_file" name="private_key_file" accept=".pem" required>
+            <input type="submit" value="Déchiffrer">
+        </form>
+        {% if plaintext %}
+            <h2>Texte déchiffré:</h2>
+            <p>{{ plaintext }}</p>
+        {% endif %}
+                        <a href="{{ url_for('encryption.home') }}" class="button">Back to Home</a>
+
+    </div>
+</body>
+</html>

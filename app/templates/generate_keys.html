@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Keys</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+        <header>
+        <h1>My Encryption App</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('encryption.home') }}">Home</a></li>
+                <li><a href="{{ url_for('encryption.show_encrypt_form') }}">Chiffrer des données</a></li>
+                <li><a href="{{ url_for('encryption.show_decrypt_form') }}">Déchiffrer des données</a></li>
+                <li><a href="{{ url_for('encryption.show_encrypt_image_form') }}">Chiffrer des images</a></li>
+                <li><a href="{{ url_for('encryption.show_decrypt_image_form') }}">Déchiffrer des images</a></li>
+            </ul>
+        </nav>
+                <h1>Génération de Clés</h1>
+
+    </header>
+
+    <div class="container" id="generate_keys">
+        <h2>Formulaire de génération de clés</h2>
+        <form action="{{ url_for('encryption.generate_keys') }}" method="get">
+            <input type="submit" value="Générer des clés">
+        </form>
+        {% if public_key_filename %}
+            <h2>Clé publique générée:</h2>
+            <a href="{{ url_for('encryption.download_public_key', filename=public_key_filename) }}">{{ public_key_filename }}</a>
+        {% endif %}
+                        <a href="{{ url_for('encryption.home') }}" class="button">Back to Home</a>
+
+    </div>
+</body>
+</html>

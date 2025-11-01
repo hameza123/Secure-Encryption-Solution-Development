@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil - Application de Chiffrement</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue dans l'application de chiffrement</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('encryption.show_encrypt_form') }}">Chiffrer des données</a></li>
+                <li><a href="{{ url_for('encryption.show_decrypt_form') }}">Déchiffrer des données</a></li>
+                <li><a href="{{ url_for('encryption.show_generate_keys_form') }}">Générer des clés</a></li>
+                <li><a href="{{ url_for('encryption.show_encrypt_image_form') }}">Chiffrer des images</a></li>
+                <li><a href="{{ url_for('encryption.show_decrypt_image_form') }}">Déchiffrer des images</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p>Utilisez les liens ci-dessus pour accéder aux différentes fonctionnalités de l'application.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Application de Chiffrement. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

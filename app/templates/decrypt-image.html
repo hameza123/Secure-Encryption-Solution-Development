@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decrypt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+        <header>
+        <h1>My Encryption App</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('encryption.home') }}">Home</a></li>
+                <li><a href="{{ url_for('encryption.show_encrypt_form') }}">Chiffrer des données</a></li>
+                <li><a href="{{ url_for('encryption.show_decrypt_form') }}">Déchiffrer des données</a></li>
+                <li><a href="{{ url_for('encryption.show_generate_keys_form') }}">Générer des clés</a></li>
+                <li><a href="{{ url_for('encryption.show_encrypt_image_form') }}">Chiffrer des images</a></li>
+            </ul>
+        </nav>
+                <h1>Dechiffrement des images</h1>
+
+    </header>
+       <div class="container">
+    <h1>Déchiffrement d'une Image</h1>
+    <form action="/decrypt-image" method="POST" enctype="multipart/form-data">
+        <label for="encrypted_file">Sélectionnez le fichier combiné (image chiffrée, IV, et clé symétrique) :</label>
+        <input type="file" name="encrypted_file" id="encrypted_file" required>
+
+        <label for="private_key_file">Sélectionnez le fichier de clé privée :</label>
+        <input type="file" name="private_key_file" id="private_key_file" required>
+
+        <button type="submit">Déchiffrer l'image</button>
+    </form>
+    <a href="{{ url_for('encryption.home') }}" class="button">Back to Home</a>
+</div>
+
+</body>
+</html>
