@@ -21,13 +21,13 @@ My Encryption App est une application web sécurisée pour le chiffrement et le 
 
 1. **Clonez le dépôt :**
 ```bash
-git clone https://github.com/yourusername/yourrepository.git
-cd yourrepository
+git clone https://github.com/hameza123/Secure-Encryption-Solution-Development.git
+cd Secure-Encryption-Solution-Development
 ```
 
 2. **Créez et activez un environnement virtuel :**
 ```bash
-python -m venv venv
+python3 -m venv venv
 ```
 **Pour Windows :**
 ```bash
@@ -78,7 +78,7 @@ Ce projet est sous la licence MIT. Voir le fichier LICENSE pour plus de détails
 
 ## Contact
 
-Pour toute question, veuillez me contacter à your.email@example.com.
+Pour toute question, veuillez me contacter à [Linkedin](https://www.linkedin.com/in/hamzarahmani1)
 
 ---
 
